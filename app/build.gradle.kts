@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("kotlin-android")
     id("androidx.navigation.safeargs.kotlin")
+    id("kotlin-android-extensions")
 }
 
 android {
@@ -37,6 +38,14 @@ dependencies {
     implementation(Dep.AndroidX.appCompat)
     implementation(Dep.AndroidX.constraint)
     implementation(Dep.AndroidX.coreKtx)
+    implementation(Dep.AndroidX.fragmentKtx)
+    implementation(Dep.AndroidX.livedataKtx)
+
+    apply(Dep.AndroidX.Lifecycle)
+    apply(Dep.AndroidX.Navigation)
+
+    implementation(Dep.material)
+
     testImplementation(Dep.Test.junit)
     androidTestImplementation(Dep.Test.espresso)
 }
