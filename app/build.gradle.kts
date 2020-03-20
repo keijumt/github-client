@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -24,6 +25,8 @@ android {
             )
         }
     }
+
+    buildFeatures.dataBinding = true
 }
 
 dependencies {

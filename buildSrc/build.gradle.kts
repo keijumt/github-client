@@ -5,9 +5,7 @@ plugins {
 repositories {
     jcenter()
     google()
-    maven {
-        url = uri("https://plugins.gradle.org/m2/")
-    }
+    maven { url = uri("https://plugins.gradle.org/m2/") }
 }
 
 dependencies {
