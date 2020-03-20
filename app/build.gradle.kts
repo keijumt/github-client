@@ -27,6 +27,8 @@ android {
 }
 
 dependencies {
+    apply(Module.auth)
+
     implementation(Dep.Kotlin.stdlibJvm)
     implementation(Dep.AndroidX.appCompat)
     implementation(Dep.AndroidX.constraint)
