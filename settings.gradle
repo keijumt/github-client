@@ -1,3 +1,0 @@
-include ':modules:auth'
-rootProject.name='github-client'
-include ':app'
