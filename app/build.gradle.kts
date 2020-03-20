@@ -30,6 +30,7 @@ android {
 }
 
 dependencies {
+    apply(Module.common)
     apply(Module.auth)
 
     implementation(Dep.Kotlin.stdlibJvm)
