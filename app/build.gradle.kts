@@ -33,6 +33,7 @@ android {
 dependencies {
     apply(Module.common)
     apply(Module.auth)
+    apply(Module.resource)
 
     implementation(Dep.Kotlin.stdlibJvm)
     implementation(Dep.AndroidX.appCompat)

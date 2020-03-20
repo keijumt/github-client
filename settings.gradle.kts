@@ -1,7 +1,7 @@
-include(":modules:common")
 include (
     ":app",
     ":modules:common",
-    ":modules:auth"
+    ":modules:auth",
+    ":modules:resource"
 )
 rootProject.name = "github-client"
