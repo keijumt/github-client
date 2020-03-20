@@ -1,7 +1,7 @@
 object Version {
     const val targetSdkVersion = 29
     const val compileSdkVersion = 29
-    const val minSdkVersion = 21
+    const val minSdkVersion = 23
 
     private const val versionMajor = 1
     private const val versionMinor = 1
