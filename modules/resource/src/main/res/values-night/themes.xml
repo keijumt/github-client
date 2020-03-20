@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.GithubClient.DayNight" parent="Theme.GithubClient.Dark" />
+
+    <style name="Theme.GithubClient.Dark" parent="Theme.GithubClient" />
+</resources>
