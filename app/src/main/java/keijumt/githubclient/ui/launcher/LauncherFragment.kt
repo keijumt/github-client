@@ -27,6 +27,7 @@ internal class LauncherFragment : Fragment(R.layout.fragment_launcher) {
         val launcherViewModel by viewModels<LauncherViewModel> { viewModelFactory }
 
         launcherViewModel.destination.observe(viewLifecycleOwner) {
+            println(it)
             when (it) {
                 LauncherViewModel.Destination.Main -> {
                     // TODO: メイン画面に遷移

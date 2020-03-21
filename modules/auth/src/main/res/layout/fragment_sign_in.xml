@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.signin.SignInFragment">
 
     <data>
 
@@ -8,16 +11,63 @@
             type="keijumt.githubclient.auth.ui.signin.SignInViewModel" />
     </data>
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.signin.SignInFragment">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="signIn" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/user_name_input_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="UserName"
+            app:layout_constraintBottom_toTopOf="@id/token_input_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed">
 
-    </FrameLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:inputType="text"
+                android:singleLine="true"
+                android:text="@={viewModel.userName}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/token_input_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Token"
+            app:layout_constraintBottom_toTopOf="@id/authenticate_button"
+            app:layout_constraintEnd_toEndOf="@id/user_name_input_layout"
+            app:layout_constraintStart_toStartOf="@id/user_name_input_layout"
+            app:layout_constraintTop_toBottomOf="@id/user_name_input_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:inputType="text"
+                android:text="@={viewModel.token}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/authenticate_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:enabled="@{viewModel.isAuthenticateButtonEnabled}"
+            android:onClick="@{() -> viewModel.onClickAuthenticate()}"
+            android:text="Authenticate"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/token_input_layout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

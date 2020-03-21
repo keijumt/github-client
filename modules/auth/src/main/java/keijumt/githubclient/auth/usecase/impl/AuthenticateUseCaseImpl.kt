@@ -13,7 +13,8 @@ internal class AuthenticateUseCaseImpl @Inject constructor(
     private val tokenRepository: TokenRepository,
     private val userNameRepository: UserNameRepository
 ) : AuthenticateUseCase {
-    override suspend fun execute(userName: String, token: Token): AuthenticateResult {
+    override suspend fun execute(userName: String, tokenRawValue: String): AuthenticateResult {
+        val token = Token(tokenRawValue)
         try {
             authenticateService.execute(userName, token)
         } catch (e: Exception) {

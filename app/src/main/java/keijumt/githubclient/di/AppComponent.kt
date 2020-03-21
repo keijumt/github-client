@@ -5,6 +5,7 @@ import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
+import keijumt.githubclient.api.GithubApi
 import keijumt.githubclient.auth.hostservice.CheckAuthenticatedService
 import keijumt.githubclient.common.di.DispatchingInjector
 import keijumt.githubclient.ui.launcher.LauncherFragmentModule
@@ -23,6 +24,7 @@ interface AppComponent : AndroidInjector<DispatchingInjector> {
     interface Factory {
         fun create(
             @BindsInstance application: Application,
+            @BindsInstance api: GithubApi,
             @BindsInstance checkAuthenticatedService: CheckAuthenticatedService
         ): AppComponent
     }

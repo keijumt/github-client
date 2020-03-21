@@ -3,6 +3,7 @@ package keijumt.githubclient
 import android.app.Application
 import dagger.android.AndroidInjector
 import dagger.android.HasAndroidInjector
+import keijumt.githubclient.api.GithubApiFactory
 import keijumt.githubclient.auth.di.DaggerAuthComponent
 import keijumt.githubclient.common.di.DispatchingInjector
 import keijumt.githubclient.common.di.ModuleInjector
@@ -15,9 +16,12 @@ class App : Application(), HasAndroidInjector {
     override fun onCreate() {
         super.onCreate()
 
+        val api = GithubApiFactory.create()
+
         val authInjector = DispatchingInjector()
         val authComponent = DaggerAuthComponent.factory().create(
-            application = this
+            application = this,
+            api = api
         )
         authComponent.inject(authInjector)
 
@@ -26,6 +30,7 @@ class App : Application(), HasAndroidInjector {
         val appInjector = DispatchingInjector()
         val appComponent = DaggerAppComponent.factory().create(
             application = this,
+            api = api,
             checkAuthenticatedService = checkAuthenticatedService
         )
         appComponent.inject(appInjector)

@@ -1,9 +1,7 @@
 package keijumt.githubclient.auth.usecase
 
-import keijumt.githubclient.auth.domain.model.Token
-
 internal interface AuthenticateUseCase {
-    suspend fun execute(userName: String, token: Token): AuthenticateResult
+    suspend fun execute(userName: String, token: String): AuthenticateResult
 }
 
 sealed class AuthenticateResult {

@@ -65,6 +65,7 @@ object Dep {
         override fun DependencyHandler.apply() {
             implementation("com.squareup.retrofit2:retrofit:2.7.2")
             implementation("com.squareup.retrofit2:converter-moshi:2.7.2")
+            implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.5.0")
         }
     }
 

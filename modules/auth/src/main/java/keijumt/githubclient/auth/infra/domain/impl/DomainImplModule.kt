@@ -2,6 +2,7 @@ package keijumt.githubclient.auth.infra.domain.impl
 
 import dagger.Module
 import dagger.Provides
+import keijumt.githubclient.api.GithubApi
 import keijumt.githubclient.auth.domain.model.AuthenticateService
 import keijumt.githubclient.auth.domain.repository.TokenRepository
 import keijumt.githubclient.auth.domain.repository.UserNameRepository
@@ -28,5 +29,7 @@ internal class DomainImplModule {
 
     @Singleton
     @Provides
-    fun provideAuthenticateService(): AuthenticateService = AuthenticateServiceImpl()
+    fun provideAuthenticateService(
+        api: GithubApi
+    ): AuthenticateService = AuthenticateServiceImpl(api)
 }
