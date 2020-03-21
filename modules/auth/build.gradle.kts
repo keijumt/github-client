@@ -8,6 +8,7 @@ android.buildFeatures.dataBinding = true
 dependencies {
     apply(Module.common)
     apply(Module.resource)
+    apply(Module.api)
 
     apply(Dep.Dagger)
     apply(Dep.OkHttp)
