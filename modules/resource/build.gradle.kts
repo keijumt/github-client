@@ -3,5 +3,5 @@ plugins {
 }
 
 dependencies {
-    implementation(Dep.material)
+    api(Dep.material)
 }

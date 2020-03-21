@@ -11,7 +11,12 @@ enum class PageConfiguration(
     val hideBottomNavigation: Boolean = false
 ) {
     Launcher(
-       R.id.launcher,
+        R.id.launcher,
+        hasTitle = false,
+        hideToolbar = true
+    ),
+    SignIn(
+        R.id.signIn,
         hasTitle = false,
         hideToolbar = true
     ),

@@ -6,7 +6,8 @@ plugins {
 android.buildFeatures.dataBinding = true
 
 dependencies {
-    implementation(Dep.material)
+    apply(Module.common)
+    apply(Module.resource)
 
     apply(Dep.Dagger)
     apply(Dep.OkHttp)

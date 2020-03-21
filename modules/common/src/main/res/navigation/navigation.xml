@@ -8,6 +8,16 @@
     <fragment
         android:id="@+id/launcher"
         android:name="keijumt.githubclient.ui.launcher.LauncherFragment"
-        android:label="fragment_launcher"
-        tools:layout="@layout/fragment_launcher" />
+        android:label="launcher"
+        tools:layout="@layout/fragment_launcher">
+        <action
+            android:id="@+id/action_launcher_to_signIn"
+            app:destination="@id/signIn" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signIn"
+        android:name="keijumt.githubclient.auth.ui.signin.SignInFragment"
+        android:label="signin"
+        tools:layout="@layout/fragment_signin" />
 </navigation>

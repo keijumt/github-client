@@ -1,8 +1,8 @@
 plugins {
     id("com.android.application")
-    id("kotlin-android")
+    kotlin("android")
+    kotlin("kapt")
     id("androidx.navigation.safeargs.kotlin")
-    id("kotlin-android-extensions")
 }
 
 android {
@@ -28,6 +28,15 @@ android {
     }
 
     buildFeatures.dataBinding = true
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 dependencies {
@@ -44,6 +53,7 @@ dependencies {
 
     apply(Dep.AndroidX.Lifecycle)
     apply(Dep.AndroidX.Navigation)
+    apply(Dep.Dagger)
 
     implementation(Dep.material)
 
